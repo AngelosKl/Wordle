@@ -1,4 +1,4 @@
-import { vi } from 'vitest'; // Import vi from vitest
+import { vi, describe, it, expect } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Welcome from '../Welcome';
 import { MemoryRouter } from 'react-router-dom';

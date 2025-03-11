@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, MemoryRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Welcome from './welcomeScreens/Welcome';
 import Rules from './welcomeScreens/Rules';
 import Application from './welcomeScreens/Application';

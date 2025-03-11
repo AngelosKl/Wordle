@@ -1,6 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { AppContext } from '../Wordle';
 import Key from '../Key';
+import { vi, describe, it, expect } from 'vitest';
+
 
 
 const mockContextValue = {

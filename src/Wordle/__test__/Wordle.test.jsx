@@ -1,7 +1,7 @@
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import Wordle from '../Wordle';
 import { MemoryRouter } from 'react-router-dom';
-import { AppContext } from '../Wordle';
+import { describe, it, expect } from 'vitest';
 
 describe('Wordle', () => {
     it('renders the keyboard component', () => {
