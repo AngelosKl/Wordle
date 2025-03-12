@@ -6,9 +6,9 @@ function Letter({ letterPos, attemptVal }) {
         board,
         correctWord,
         currAttempt,
-        disabledLetters, setDisabledLetters,
-        correctLetters, setCorrectLetters,
-        almostLetters, setAlmostLetters
+        setDisabledLetters,
+        setCorrectLetters,
+        setAlmostLetters
     } = useContext(AppContext);
 
     const letter = board[attemptVal][letterPos];

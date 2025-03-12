@@ -16,6 +16,7 @@ function Keyboard() {
         onDelete,
     } = useContext(AppContext);
 
+     
     const handleKeyboard = useCallback(
         (event) => {
 

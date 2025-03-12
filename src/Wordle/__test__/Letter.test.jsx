@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import Letter from '../Letter';
 import { AppContext } from '../Wordle';
 import React from 'react';
+import { vi, describe, it, expect } from 'vitest';
+
 
 describe('Letter', () => {
     const mockSetCorrectLetters = vi.fn();

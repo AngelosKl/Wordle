@@ -4,6 +4,7 @@ import Keyboard from './Keyboard';
 import Board from './Board';
 import { boardDefault, generateWordSet } from './Words';
 
+ 
 export const AppContext = createContext();
 
 function Wordle() {
@@ -14,7 +15,6 @@ function Wordle() {
     const [correctLetters, setCorrectLetters] = useState([]);
     const [almostLetters, setAlmostLetters] = useState([]);
     const [disabledLetters, setDisabledLetters] = useState([]);
-    const [gameResult, setGameResult] = useState("");
 
     let navigate = useNavigate();
 
@@ -41,12 +41,10 @@ function Wordle() {
         }
 
         if (normalizedCurrWord === normalizedCorrectWord) {
-            setGameResult("win");
             setTimeout(() => {
                 navigate('/finale', { state: { result: "win", correctWord } });
             }, 1000);
         } else if (currAttempt.attempt === 4) {
-            setGameResult("lose");
             setTimeout(() => {
                 navigate('/finale', { state: { result: "lose", correctWord } });
             }, 1000);

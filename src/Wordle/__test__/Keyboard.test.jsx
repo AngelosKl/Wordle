@@ -1,7 +1,9 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import Keyboard from "../Keyboard";
 import { AppContext } from "../Wordle";
 import React from "react";
+import { vi, describe, it, expect } from 'vitest';
+
 
 describe("Keyboard", () => {
     let mockContextValue;
