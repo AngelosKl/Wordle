@@ -1,7 +1,25 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import Wordle from '../Wordle';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import fs from 'fs';
+import path from 'path';
+
+
+vi.mock('../Words', async (importOriginal) => {
+    const actual = await importOriginal();
+    return {
+        ...actual,
+        generateWordSet: async () => {
+            const filePath = path.join(__dirname, '../wordBank.txt');
+            const data = fs.readFileSync(filePath, 'utf-8');
+            const wordArr = data.split('\n');
+            const todaysWord = wordArr[Math.floor(Math.random() * wordArr.length)];
+            const wordSet = new Set(wordArr);
+            return { wordSet, todaysWord };
+        },
+    };
+});
 
 describe('Wordle', () => {
     it('renders the keyboard component', () => {
