@@ -23,7 +23,7 @@ function Finale() {
         <div className="pageContainer">
             <div className="pageContent">
                 <h1>{result === "win" ? "🎉 Congratulations! You won!" : "😢 Game Over!"}</h1>
-                <p>The correct word was: <strong>{correctWord}</strong></p>
+                <p>The correct word was: <strong>{correctWord.toUpperCase()}</strong></p>
                 <div className="finale-buttons">
                     <button className="regButtons" onClick={handleMenu}>🏠 Home</button>
                     <button className="retryButton" onClick={handleRetry}>🔄 Retry</button>
